@@ -1,0 +1,188 @@
+/* naumanbuilds.com
+   Light, readable main site. Navy and lime are shared with demo.naumanbuilds.com.
+   Layout: one column of sections at max 1080px; hero is two columns on wide screens. */
+
+@font-face {
+  font-family: "Schibsted Grotesk";
+  src: url("../fonts/schibsted-grotesk-latin-var.woff2") format("woff2");
+  font-weight: 400 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Public Sans";
+  src: url("../fonts/public-sans-latin-var.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("../fonts/jetbrains-mono-latin-var.woff2") format("woff2");
+  font-weight: 400 600;
+  font-display: swap;
+}
+
+:root {
+  --bg: #F5F7F9;
+  --surface: #FFFFFF;
+  --ink: #182634;
+  --body: #2E3E4E;
+  --muted: #5F7082;
+  --line: #DCE3EA;
+  --chip: #EAF0F5;
+  --navy: #0C1A2B;
+  --navy-line: #1F3A5A;
+  --navy-text: #DCE6F0;
+  --navy-muted: #8FA6C2;
+  --lime: #C8F560;
+  --ok: #2F7D32;
+  --fail: #C9433A;
+  --soon: #D49A2A;
+  --idle: #9AA8B6;
+
+  --f-head: "Schibsted Grotesk", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --f-body: "Public Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --wrap: 1080px;
+  --gutter: clamp(18px, 4vw, 40px);
+  --radius: 12px;
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto } }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--body);
+  font-family: var(--f-body);
+  font-size: 18px;
+  line-height: 1.65;
+}
+img { max-width: 100%; height: auto; display: block }
+a { color: inherit }
+h1, h2, h3 { font-family: var(--f-head); color: var(--ink); text-wrap: balance; margin: 0 }
+p { margin: 0 }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 2px }
+
+.skip { position: absolute; left: 12px; top: -60px; background: var(--navy); color: #FFFFFF; padding: 10px 14px; border-radius: 6px; z-index: 10; text-decoration: none }
+.skip:focus { top: 12px }
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding-inline: var(--gutter) }
+.mono-label { font: 500 13px/1.4 var(--f-mono); color: var(--muted); text-transform: uppercase; letter-spacing: .08em }
+
+/* ---------- header ---------- */
+.site-head .wrap { display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: center; justify-content: space-between; padding-block: 18px }
+.logo { display: inline-flex; align-items: center; gap: 10px; font: 700 17px var(--f-head); color: var(--ink); text-decoration: none; letter-spacing: -.01em }
+.logo i { width: 10px; height: 10px; background: var(--navy); box-shadow: 4px 4px 0 var(--lime) }
+.site-nav { display: flex; flex-wrap: wrap; gap: 6px 22px; align-items: center; font-size: 15px }
+.site-nav a { color: var(--muted); text-decoration: none }
+.site-nav a:hover { color: var(--ink) }
+.site-nav .nav-mail { color: var(--ink); font-weight: 600; border: 1.5px solid var(--ink); padding: 7px 13px; border-radius: 6px }
+
+/* ---------- hero ---------- */
+.hero { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); align-items: center; padding-block: clamp(28px, 6vw, 72px) clamp(48px, 7vw, 88px) }
+.id { display: flex; gap: 16px; align-items: center; margin-bottom: 20px }
+.avatar { width: 76px; height: 76px; border-radius: 12px; object-fit: cover; border: 1.5px solid var(--navy); box-shadow: 5px 5px 0 var(--lime); flex: none }
+.hero h1 { font-size: clamp(36px, 5.2vw, 60px); line-height: 1.04; letter-spacing: -.035em; font-weight: 800 }
+.mark { background: linear-gradient(transparent 58%, var(--lime) 58%, var(--lime) 92%, transparent 92%); padding-inline: .04em; -webkit-box-decoration-break: clone; box-decoration-break: clone }
+.lede { font-size: 19px; max-width: 46ch; margin-top: 22px }
+.cta { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; margin-top: 28px }
+.btn-mail { background: var(--navy); color: #FFFFFF; text-decoration: none; font: 600 16px var(--f-body); padding: 14px 20px; border-radius: 8px; overflow-wrap: anywhere }
+.btn-mail:hover { background: #142a44 }
+.link-quiet { color: var(--ink); font-weight: 600; font-size: 16px; text-underline-offset: 4px }
+
+/* the hook: a real entry from the demo's bug log */
+.bug { display: grid; gap: 12px; min-width: 0 }
+.bug-cap { display: flex; justify-content: space-between; gap: 10px; font: 500 12px var(--f-mono); color: var(--muted); text-transform: uppercase; letter-spacing: .08em }
+.bug-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; font-size: 16px; line-height: 1.55; box-shadow: 0 1px 0 rgba(24,38,52,.03), 0 10px 26px -20px rgba(24,38,52,.45) }
+.bug-card > p + p, .bug-card > p + dl { margin-top: 14px }
+.bug-ctx { font: 500 12.5px var(--f-mono); color: var(--muted) }
+.bug-card .bad { color: var(--fail); font-weight: 700 }
+.bug-card dl { margin: 0; display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 10px 14px; border-top: 1px dashed var(--line); padding-top: 14px; font-size: 15px }
+.bug-card dt { font: 600 11.5px/1.9 var(--f-mono); text-transform: uppercase; letter-spacing: .06em; color: var(--muted) }
+.bug-card dt.held { color: var(--ok) }
+.bug-card dd { margin: 0 }
+code { font: 13.5px var(--f-mono); background: var(--chip); padding: 1px 5px; border-radius: 3px }
+
+/* ---------- section headings ---------- */
+.sec-head { display: grid; gap: 8px; margin-bottom: 30px; max-width: 640px }
+.sec-head h2 { font-size: clamp(28px, 3.6vw, 38px); line-height: 1.12; letter-spacing: -.025em; font-weight: 800 }
+
+/* ---------- agency work (swappable "current focus" block) ---------- */
+.focus { background: var(--surface); border-block: 1px solid var(--line); padding-top: clamp(44px, 7vw, 84px) }
+.focus-flag { display: inline-flex; gap: 10px; align-items: center; font: 600 12px var(--f-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--ink); margin-bottom: 14px }
+.focus-flag i { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 4px rgba(47,125,50,.14) }
+.focus-flag span { color: var(--muted); font-weight: 500 }
+.focus h2 { font-size: clamp(28px, 3.6vw, 40px); line-height: 1.1; letter-spacing: -.025em; font-weight: 800; max-width: 22ch }
+.focus-lede { max-width: 60ch; margin: 14px 0 30px }
+.services { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; list-style: none; margin: 0; padding: 0 }
+.service { background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; display: flex; flex-direction: column; gap: 10px; min-width: 0 }
+.service h3 { font-size: 21px; line-height: 1.25; letter-spacing: -.015em; font-weight: 700 }
+.service p { font-size: 16.5px }
+.service .note { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--line); font: 13px var(--f-mono); color: var(--muted) }
+
+.terms { background: var(--navy); color: var(--navy-text); margin-top: clamp(40px, 6vw, 64px); padding-block: clamp(44px, 7vw, 80px) }
+.terms .mono-label { color: var(--navy-muted) }
+.terms h2 { color: #FFFFFF }
+.terms ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px }
+.terms li { position: relative; padding: 14px 0 14px 30px; border-bottom: 1px solid var(--navy-line) }
+.terms li::before { content: ""; position: absolute; left: 2px; top: 23px; width: 12px; height: 6px; border-left: 2.5px solid var(--lime); border-bottom: 2.5px solid var(--lime); transform: rotate(-45deg) }
+
+/* ---------- projects ---------- */
+.projects { padding-top: clamp(48px, 8vw, 96px) }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px }
+.filters[hidden] { display: none }
+.filters button { font: 500 14px var(--f-body); color: var(--body); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px; cursor: pointer }
+.filters button span { font: 12px var(--f-mono); color: var(--muted); margin-left: 4px }
+.filters button[aria-pressed="true"] { background: var(--navy); color: #FFFFFF; border-color: var(--navy) }
+.filters button[aria-pressed="true"] span { color: var(--lime) }
+.project-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line) }
+.project { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 10px 40px; padding: 26px 0; border-bottom: 1px solid var(--line) }
+.project[hidden] { display: none }
+.project .project-kind { font: 500 12px var(--f-mono); color: var(--muted); text-transform: uppercase; letter-spacing: .06em }
+.project h3 { margin: 6px 0 10px; font-size: 22px; line-height: 1.2; letter-spacing: -.015em; font-weight: 700; overflow-wrap: anywhere }
+.project .status { display: inline-flex; gap: 7px; align-items: center; font: 500 12.5px var(--f-mono) }
+.status i { width: 7px; height: 7px; border-radius: 50%; background: var(--idle) }
+.status.live i { background: var(--ok) }
+.status.soon i { background: var(--soon) }
+.project p { font-size: 17px; max-width: 64ch }
+.project-foot { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; margin-top: 14px }
+.stack { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0; padding: 0 }
+.stack li { font: 12.5px var(--f-mono); color: var(--ink); background: var(--chip); padding: 3px 8px; border-radius: 4px }
+.project-link { font: 500 13.5px var(--f-mono); color: var(--muted) }
+.project-link a { color: var(--ink); font-weight: 600 }
+
+/* ---------- contact ---------- */
+.contact { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: clamp(24px, 4vw, 48px); align-items: center; padding-block: clamp(56px, 9vw, 110px) clamp(40px, 6vw, 64px) }
+.contact figure { margin: 0 }
+.contact img { width: 200px; aspect-ratio: 1; object-fit: cover; border-radius: 14px; border: 1.5px solid var(--navy); box-shadow: 8px 8px 0 var(--lime) }
+.contact h2 { font-size: clamp(30px, 4vw, 44px); letter-spacing: -.03em; line-height: 1.1; font-weight: 800 }
+.contact .mail { display: inline-block; margin-top: 18px; font: 700 clamp(22px, 3.6vw, 34px)/1.25 var(--f-head); color: var(--ink); text-decoration: none; border-bottom: 4px solid var(--lime); letter-spacing: -.02em; overflow-wrap: anywhere }
+.contact .mail:hover { border-bottom-color: var(--ink) }
+.contact p { margin-top: 18px; color: var(--muted); font-size: 16px; max-width: 52ch }
+
+.site-foot .wrap { border-top: 1px solid var(--line); padding-block: 18px; font: 13px var(--f-mono); color: var(--muted); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px }
+
+/* ---------- small screens ---------- */
+@media (max-width: 860px) {
+  .hero, .terms ul { grid-template-columns: minmax(0, 1fr) }
+  .services { grid-template-columns: minmax(0, 1fr) }
+  .project { grid-template-columns: minmax(0, 1fr) }
+  .site-nav a:not(.nav-mail) { display: none }
+}
+@media (max-width: 600px) {
+  .contact { grid-template-columns: minmax(0, 1fr) }
+  .contact img { width: 160px }
+}
+@media (max-width: 480px) {
+  .bug-card dl { grid-template-columns: minmax(0, 1fr); gap: 2px }
+  .bug-card dd { margin-bottom: 10px }
+}
+
+@media print {
+  .site-nav, .filters, .skip { display: none }
+  .terms { background: none; color: var(--body) }
+  .terms h2 { color: var(--ink) }
+}

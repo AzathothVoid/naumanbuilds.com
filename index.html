@@ -3,28 +3,233 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nauman · naumanbuilds</title>
-<meta name="description" content="Nauman, software engineer. AI agents, automations, and the software around them.">
-<style>
-  :root { --bg: #F5F7F9; --ink: #182634; --body: #2E3E4E; --muted: #5F7082; --navy: #0C1A2B; --lime: #C8F560 }
-  * { box-sizing: border-box }
-  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: var(--bg); color: var(--body);
-         font: 18px/1.65 "Segoe UI", Roboto, Helvetica, Arial, sans-serif; padding: 40px 20px }
-  main { max-width: 560px }
-  .logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; color: var(--ink); font-size: 17px }
-  .logo i { width: 10px; height: 10px; background: var(--navy); box-shadow: 4px 4px 0 var(--lime) }
-  h1 { color: var(--ink); font-size: clamp(30px, 6vw, 42px); line-height: 1.1; letter-spacing: -.03em; margin: 28px 0 0 }
-  p { margin: 16px 0 0 }
-  a.mail { display: inline-block; margin-top: 26px; color: var(--ink); font-weight: 700; font-size: 20px; text-decoration: none; border-bottom: 3px solid var(--lime) }
-  a.mail:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px }
-</style>
+<title>Nauman · software engineer · naumanbuilds</title>
+<meta name="description" content="Nauman, software engineer. I build AI agents, automations, and the software around them, including white-label voice and WhatsApp agents for agencies.">
+<link rel="canonical" href="https://naumanbuilds.com/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/schibsted-grotesk-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/public-sans-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css">
+<meta name="theme-color" content="#F5F7F9">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://naumanbuilds.com/">
+<meta property="og:title" content="Nauman · software engineer">
+<meta property="og:description" content="I build AI agents, automations, and the software around them.">
+<meta property="og:image" content="https://naumanbuilds.com/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
-<main>
-  <span class="logo"><i></i>naumanbuilds</span>
-  <h1>I'm Nauman. I build AI agents, automations, and the software around them.</h1>
-  <p>The full site is on its way. Until then, email is the best way to reach me.</p>
-  <a class="mail" href="mailto:nauman@naumanbuilds.com">nauman@naumanbuilds.com</a>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="logo" href="/"><i aria-hidden="true"></i>naumanbuilds</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#agency-work">Agency work</a>
+      <a href="#projects">Projects</a>
+      <a class="nav-mail" href="#contact">Email</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <div class="id">
+          <picture>
+            <source srcset="assets/img/nauman-avatar.webp" type="image/webp">
+            <img class="avatar" src="assets/img/nauman-avatar.jpg" width="76" height="76" alt="Photo of Nauman">
+          </picture>
+          <p class="mono-label">Software engineer</p>
+        </div>
+        <h1 id="hero-title">I'm Nauman. I build AI agents, automations, and <span class="mark">the software around them.</span></h1>
+        <p class="lede">At the moment I'm focused on voice and WhatsApp agents for small agencies. Agents that book the appointment, update the CRM, and pass the call to a person when they can't handle it.</p>
+        <div class="cta">
+          <a class="btn-mail" href="mailto:nauman@naumanbuilds.com">nauman@naumanbuilds.com</a>
+          <a class="link-quiet" href="#projects">Projects</a>
+        </div>
+      </div>
+
+      <aside class="bug" aria-labelledby="bug-title">
+        <p class="bug-cap"><span id="bug-title">From my demo's bug log</span><span>#2 · 4 Oct 2026</span></p>
+        <div class="bug-card">
+          <p class="bug-ctx">Test call to the demo (fictional business)</p>
+          <p>A caller mentioned a faint gas smell and got the safety instructions. Then they asked about a leaking sink. The agent logged the callback as <span class="bad">not urgent</span> and promised a call back during office hours.</p>
+          <dl>
+            <dt>Cause</dt>
+            <dd>When the caller changed topic, the agent re-decided urgency from the latest thing they said.</dd>
+            <dt>First fix</dt>
+            <dd>Told the model to keep the urgent flag. In simulations it still dropped it sometimes.</dd>
+            <dt class="held">Fix that held</dt>
+            <dd>The callback tool now forces <code>urgent</code> if the call was ever marked urgent. The model can't downgrade it any more.</dd>
+          </dl>
+        </div>
+      </aside>
+    </section>
+  </div>
+
+  <!-- Current focus. To change focus later, replace this whole section. -->
+  <section class="focus" id="agency-work" aria-labelledby="focus-title">
+    <div class="wrap">
+      <p class="focus-flag"><i aria-hidden="true"></i>Agency work <span>· open to new projects</span></p>
+      <h2 id="focus-title">White-label voice and WhatsApp agents</h2>
+      <p class="focus-lede">If your agency sells AI receptionists and you're short on engineering time, I can take on the build or fix work. I work inside your accounts, and your clients don't hear from me.</p>
+      <ul class="services">
+        <li class="service">
+          <h3>Fix an agent that's misbehaving</h3>
+          <p>Send me the agent and a few calls where it went wrong. I'll find where it breaks (prompt, tool call, webhook, calendar or CRM), fix it in your account, and write up what I changed.</p>
+          <p class="note">Good first project if we haven't worked together</p>
+        </li>
+        <li class="service">
+          <h3>Build a new agent</h3>
+          <p>Booking into the calendar, writing to the CRM, handing off to a person, and doing something sensible when a tool fails. Built in your accounts under your brand.</p>
+          <p class="note">Retell and n8n so far; other platforms on request</p>
+        </li>
+        <li class="service">
+          <h3>Ongoing support</h3>
+          <p>Prompt changes, fixes and new flows for agents you've already sold, on a monthly basis.</p>
+          <p class="note">For agents already live with clients</p>
+        </li>
+      </ul>
+    </div>
+    <div class="terms">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="mono-label">White-label terms</p>
+          <h2>How I work with agencies</h2>
+        </div>
+        <ul>
+          <li>I work in your accounts, under your brand.</li>
+          <li>I never contact your clients unless you ask.</li>
+          <li>I won't solicit your clients during the work or for 12 months after.</li>
+          <li>You own what I build once it is paid.</li>
+          <li>Happy to sign your NDA.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="projects" id="projects" aria-labelledby="projects-title">
+      <div class="sec-head">
+        <p class="mono-label">Projects</p>
+        <h2 id="projects-title">Things I've built</h2>
+      </div>
+
+      <!-- Filter buttons are built from the data-tags below by assets/js/projects.js. -->
+      <div class="filters" role="group" aria-label="Filter projects" hidden></div>
+
+      <!--
+        To add a project, copy one <li class="project"> block and edit it.
+        data-tags: any of  ai  automation  fullstack  oss   (space-separated)
+        status classes: "status live" (green), "status soon" (amber), "status" (grey)
+        kind: "Client work · anonymised", "Personal project", "Demo · personal project", "Open source · personal project"
+      -->
+      <ul class="project-list">
+        <li class="project" data-tags="ai automation fullstack">
+          <div>
+            <p class="project-kind">Client work · anonymised</p>
+            <h3>Sales-intelligence platform</h3>
+            <p class="status live"><i aria-hidden="true"></i>In production</p>
+          </div>
+          <div>
+            <p>A sales-intelligence platform for a B2B sales team, running on 26 n8n workflows in production. Leads are enriched through Apollo, and the AI research on each one is cross-checked between models before anything is written. The CRM is custom, built with Next.js and Supabase, and handles Gmail, calendar, calls and SMS.</p>
+            <div class="project-foot">
+              <ul class="stack" aria-label="Built with"><li>n8n</li><li>Apollo</li><li>Next.js</li><li>Supabase</li></ul>
+              <span class="project-link">Private</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="project" data-tags="ai fullstack">
+          <div>
+            <p class="project-kind">Client work · anonymised</p>
+            <h3>AI-assisted estimating platform</h3>
+            <p class="status live"><i aria-hidden="true"></i>Internal tool, one client</p>
+          </div>
+          <div>
+            <p>An AI-assisted estimating platform for electrical contractors. It's a multi-tenant SaaS built with FastAPI, React and PostgreSQL. One client uses it as an internal tool, and it has over 1,400 automated tests.</p>
+            <div class="project-foot">
+              <ul class="stack" aria-label="Built with"><li>FastAPI</li><li>React</li><li>PostgreSQL</li></ul>
+              <span class="project-link">Private</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="project" data-tags="ai automation">
+          <div>
+            <p class="project-kind">Demo · personal project</p>
+            <h3>Northside HVAC &amp; Plumbing (demo)</h3>
+            <p class="status soon"><i aria-hidden="true"></i>Coming soon</p>
+          </div>
+          <div>
+            <p>An AI receptionist for a made-up plumbing company that you can call or talk to in your browser. It checks a Google Calendar, books a two-hour visit, and adds you to a Google Sheet that stands in for a CRM. On the phone line, urgent calls go through to a person.</p>
+            <div class="project-foot">
+              <ul class="stack" aria-label="Built with"><li>Retell</li><li>n8n</li><li>Google Calendar</li><li>Google Sheets</li></ul>
+              <span class="project-link">demo.naumanbuilds.com</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="project" data-tags="ai automation oss">
+          <div>
+            <p class="project-kind">Open source · personal project</p>
+            <h3>retell-n8n-booking-agent</h3>
+            <p class="status soon"><i aria-hidden="true"></i>Coming soon</p>
+          </div>
+          <div>
+            <p>The n8n workflows behind the demo, with sample payloads and setup notes. Keys and IDs are stripped out so you can import them into your own n8n.</p>
+            <div class="project-foot">
+              <ul class="stack" aria-label="Built with"><li>Retell</li><li>n8n</li></ul>
+              <span class="project-link">GitHub</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="project" data-tags="ai automation oss">
+          <div>
+            <p class="project-kind">Open source · personal project</p>
+            <h3>WhatsApp handoff handler</h3>
+            <p class="status"><i aria-hidden="true"></i>Planned</p>
+          </div>
+          <div>
+            <p>A WhatsApp Cloud API handler that passes the chat to a person when the bot can't help. Not started yet.</p>
+            <div class="project-foot">
+              <ul class="stack" aria-label="Built with"><li>WhatsApp Cloud API</li></ul>
+              <span class="project-link">GitHub</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <figure>
+        <picture>
+          <source srcset="assets/img/nauman-photo.webp" type="image/webp">
+          <img src="assets/img/nauman-photo.jpg" width="200" height="200" alt="Photo of Nauman">
+        </picture>
+      </figure>
+      <div>
+        <h2 id="contact-title">Email me</h2>
+        <a class="mail" href="mailto:nauman@naumanbuilds.com">nauman@naumanbuilds.com</a>
+        <p>If something's broken, a short description and a call recording or transcript is usually enough for me to start.</p>
+      </div>
+    </section>
+  </div>
 </main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span>Nauman · naumanbuilds.com</span>
+    <span>Last updated October 2026</span>
+  </div>
+</footer>
+
+<script src="assets/js/projects.js" defer></script>
 </body>
 </html>
