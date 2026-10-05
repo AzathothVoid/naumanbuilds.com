@@ -186,3 +186,5 @@ code { font: 13.5px var(--f-mono); background: var(--chip); padding: 1px 5px; bo
   .terms { background: none; color: var(--body) }
   .terms h2 { color: var(--ink) }
 }
+
+.sec-intro { max-width: 62ch; color: var(--body); font-size: 17px; margin-top: 6px }
