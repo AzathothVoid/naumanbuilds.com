@@ -157,6 +157,12 @@
               <ul class="stack" aria-label="Built with"><li>n8n</li><li>Apollo</li><li>Next.js</li><li>Supabase</li></ul>
               <span class="project-link">Private client project, no public link</span>
             </div>
+              <ul class="shots" aria-label="Screenshots">
+                <li><a class="shot" href="assets/img/projects/sales-1-pipeline.jpg" data-webp="assets/img/projects/sales-1-pipeline.webp" data-caption="Lead pipeline with stage filters and due-today and overdue flags"><picture><source srcset="assets/img/projects/sales-1-pipeline-thumb.webp" type="image/webp"><img src="assets/img/projects/sales-1-pipeline-thumb.jpg" width="560" height="365" alt="Lead pipeline with stage filters and due-today and overdue flags" loading="lazy"></picture></a></li>
+                <li><a class="shot" href="assets/img/projects/sales-2-lead-panel.jpg" data-webp="assets/img/projects/sales-2-lead-panel.webp" data-caption="Lead panel with contacts, email threads, meetings and an activity log"><picture><source srcset="assets/img/projects/sales-2-lead-panel-thumb.webp" type="image/webp"><img src="assets/img/projects/sales-2-lead-panel-thumb.jpg" width="560" height="365" alt="Lead panel with contacts, email threads, meetings and an activity log" loading="lazy"></picture></a></li>
+                <li><a class="shot" href="assets/img/projects/sales-3-approval-queue.jpg" data-webp="assets/img/projects/sales-3-approval-queue.webp" data-caption="Admin queue where new leads are approved before they reach the pipeline"><picture><source srcset="assets/img/projects/sales-3-approval-queue-thumb.webp" type="image/webp"><img src="assets/img/projects/sales-3-approval-queue-thumb.jpg" width="560" height="365" alt="Admin queue where new leads are approved before they reach the pipeline" loading="lazy"></picture></a></li>
+              </ul>
+              <p class="shots-note">Screenshots with mock data. Select one to enlarge.</p>
           </div>
         </li>
 
@@ -172,6 +178,12 @@
               <ul class="stack" aria-label="Built with"><li>FastAPI</li><li>React</li><li>PostgreSQL</li></ul>
               <span class="project-link">Private client project, no public link</span>
             </div>
+              <ul class="shots" aria-label="Screenshots">
+                <li><a class="shot" href="assets/img/projects/estimating-1-classification.jpg" data-webp="assets/img/projects/estimating-1-classification.webp" data-caption="Takeoff rows sorted into conduit and conductor, checked against the source totals"><picture><source srcset="assets/img/projects/estimating-1-classification-thumb.webp" type="image/webp"><img src="assets/img/projects/estimating-1-classification-thumb.jpg" width="560" height="365" alt="Takeoff rows sorted into conduit and conductor, checked against the source totals" loading="lazy"></picture></a></li>
+                <li><a class="shot" href="assets/img/projects/estimating-2-line-items.jpg" data-webp="assets/img/projects/estimating-2-line-items.webp" data-caption="Priced line items with material, labour, tax and the source of each price"><picture><source srcset="assets/img/projects/estimating-2-line-items-thumb.webp" type="image/webp"><img src="assets/img/projects/estimating-2-line-items-thumb.jpg" width="560" height="365" alt="Priced line items with material, labour, tax and the source of each price" loading="lazy"></picture></a></li>
+                <li><a class="shot" href="assets/img/projects/estimating-3-workbook.jpg" data-webp="assets/img/projects/estimating-3-workbook.webp" data-caption="Bid workbook in the browser with live formulas and Excel export"><picture><source srcset="assets/img/projects/estimating-3-workbook-thumb.webp" type="image/webp"><img src="assets/img/projects/estimating-3-workbook-thumb.jpg" width="560" height="365" alt="Bid workbook in the browser with live formulas and Excel export" loading="lazy"></picture></a></li>
+              </ul>
+              <p class="shots-note">Screenshots with mock data. Select one to enlarge.</p>
           </div>
         </li>
 
@@ -232,6 +244,15 @@
   </div>
 </footer>
 
+<dialog class="lightbox" id="lightbox" aria-label="Screenshot">
+  <figure>
+    <picture><source id="lightbox-webp" type="image/webp"><img id="lightbox-img" alt=""></picture>
+    <figcaption id="lightbox-caption"></figcaption>
+  </figure>
+  <button type="button" class="lightbox-close" id="lightbox-close">Close</button>
+</dialog>
+
 <script src="assets/js/projects.js" defer></script>
+<script src="assets/js/shots.js" defer></script>
 </body>
 </html>
