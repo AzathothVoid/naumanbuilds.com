@@ -188,3 +188,24 @@ code { font: 13.5px var(--f-mono); background: var(--chip); padding: 1px 5px; bo
 }
 
 .sec-intro { max-width: 62ch; color: var(--body); font-size: 17px; margin-top: 6px }
+
+/* identity row: role + verifiable links */
+.id-text { display: grid; gap: 2px }
+.id-role { color: var(--ink); font-weight: 600; font-size: 16px }
+.id-links { display: flex; gap: 14px; font-size: 15px }
+.id-links a, .contact-links a, .site-foot a { color: var(--ink); text-underline-offset: 3px; text-decoration-color: var(--muted) }
+.id-links a:hover, .contact-links a:hover, .site-foot a:hover { text-decoration-color: var(--ink) }
+.lede-2 { font-size: 17px; max-width: 50ch; margin-top: 12px; color: var(--muted) }
+.contact .contact-links { margin-top: 10px }
+
+/* how a first job goes: a real sequence, so it is numbered */
+.first-job { margin-top: clamp(32px, 5vw, 48px); max-width: 760px }
+.first-job h3 { font-size: 21px; letter-spacing: -.015em; font-weight: 700; margin-bottom: 14px }
+.first-job ol { margin: 0; padding: 0; list-style: none; counter-reset: step; display: grid; gap: 10px }
+.first-job li { counter-increment: step; display: grid; grid-template-columns: 34px minmax(0, 1fr); align-items: baseline; font-size: 17px }
+.first-job li::before { content: counter(step); font: 600 13px var(--f-mono); color: var(--ink); background: var(--lime); width: 24px; height: 24px; border-radius: 50%; display: inline-grid; place-items: center; transform: translateY(-1px) }
+
+@media (max-width: 600px) {
+  .bug-card .cause { display: none }
+  .bug-card { padding: 16px 18px }
+}

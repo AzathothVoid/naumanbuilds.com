@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nauman · software engineer · naumanbuilds</title>
+<title>Nauman · Software engineer for AI agents and automations</title>
 <meta name="description" content="Nauman, software engineer. I build AI agents, automations, and the software around them, including white-label voice and WhatsApp agents for agencies.">
 <link rel="canonical" href="https://naumanbuilds.com/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -20,6 +20,9 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Nauman","jobTitle":"Software engineer","url":"https://naumanbuilds.com/","email":"mailto:nauman@naumanbuilds.com","sameAs":["https://www.linkedin.com/in/muhammad-nauman-4b3b47280","https://github.com/AzathothVoid"]}
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -44,10 +47,14 @@
             <source srcset="assets/img/nauman-avatar.webp" type="image/webp">
             <img class="avatar" src="assets/img/nauman-avatar.jpg" width="76" height="76" alt="Photo of Nauman">
           </picture>
-          <p class="mono-label">Software engineer</p>
+          <div class="id-text">
+            <p class="id-role">Software engineer · 2+ years</p>
+            <p class="id-links"><a href="https://www.linkedin.com/in/muhammad-nauman-4b3b47280" rel="me">LinkedIn</a><a href="https://github.com/AzathothVoid" rel="me">GitHub</a></p>
+          </div>
         </div>
-        <h1 id="hero-title">I'm Nauman. I build AI agents, automations, and <span class="mark">the software around them.</span></h1>
-        <p class="lede">At the moment I'm focused on voice and WhatsApp agents for small agencies. Agents that book the appointment, update the CRM, and pass the call to a person when they can't handle it.</p>
+        <h1 id="hero-title">I'm Nauman. I&nbsp;build AI agents, automations, and the software around them.</h1>
+        <p class="lede">At the moment I'm focused on voice and WhatsApp agents for small agencies, the kind that book the appointment, update the CRM, and pass the call to a person when they can't handle it.</p>
+        <p class="lede-2">Most of my work so far has been backends, CRMs and automations, built with FastAPI, Next.js, React, PostgreSQL and n8n.</p>
         <div class="cta">
           <a class="btn-mail" href="mailto:nauman@naumanbuilds.com">nauman@naumanbuilds.com</a>
           <a class="link-quiet" href="#projects">Projects</a>
@@ -55,13 +62,13 @@
       </div>
 
       <aside class="bug" aria-labelledby="bug-title">
-        <p class="bug-cap"><span id="bug-title">From my bug log</span><span>#2 · 4 Oct 2026</span></p>
+        <p class="bug-cap"><span id="bug-title">From my bug log</span><span>4 Oct 2026</span></p>
         <div class="bug-card">
           <p class="bug-ctx">Test call · AI receptionist for a made-up plumbing company</p>
           <p>A caller mentioned a faint gas smell and got the safety instructions. Then they asked about a leaking sink. The agent logged the callback as <span class="bad">not urgent</span> and promised a call back during office hours.</p>
           <dl>
-            <dt>Cause</dt>
-            <dd>When the caller changed topic, the agent re-decided urgency from the latest thing they said.</dd>
+            <dt class="cause">Cause</dt>
+            <dd class="cause">When the caller changed topic, the agent re-decided urgency from the latest thing they said.</dd>
             <dt>First fix</dt>
             <dd>Told the model to keep the urgent flag. In simulations it still dropped it sometimes.</dd>
             <dt class="held">Fix that held</dt>
@@ -75,7 +82,6 @@
   <!-- Current focus. To change focus later, replace this whole section. -->
   <section class="focus" id="agency-work" aria-labelledby="focus-title">
     <div class="wrap">
-      <p class="focus-flag"><i aria-hidden="true"></i>Agency work <span>· open to new projects</span></p>
       <h2 id="focus-title">White-label voice and WhatsApp agents</h2>
       <p class="focus-lede">If your agency sells AI receptionists and you're short on engineering time, I can take on the build or fix work. I work inside your accounts, and your clients don't hear from me.</p>
       <ul class="services">
@@ -95,11 +101,20 @@
           <p class="note">For agents already live with clients</p>
         </li>
       </ul>
+
+      <div class="first-job">
+        <h3>How a first job usually goes</h3>
+        <ol>
+          <li>You send me a recording or transcript of a call that went wrong, and tell me which platform the agent runs on.</li>
+          <li>Within a day I reply with what I think is wrong and a fixed quote.</li>
+          <li>You give me access to the account it runs in (Retell, n8n or your CRM).</li>
+          <li>I fix it and send you a write-up of what I changed.</li>
+        </ol>
+      </div>
     </div>
     <div class="terms">
       <div class="wrap">
         <div class="sec-head">
-          <p class="mono-label">White-label terms</p>
           <h2>How I work with agencies</h2>
         </div>
         <ul>
@@ -116,12 +131,11 @@
   <div class="wrap">
     <section class="projects" id="projects" aria-labelledby="projects-title">
       <div class="sec-head">
-        <p class="mono-label">Projects</p>
-        <h2 id="projects-title">Things I've built</h2>
+        <h2 id="projects-title">Projects</h2>
         <p class="sec-intro">Most of my work is for clients, so the code and the products stay private. I've described those projects below without names. The voice agent is one I built myself so you have something you can actually try.</p>
       </div>
 
-      <!-- Filter buttons are built from the data-tags below by assets/js/projects.js. -->
+      <!-- Filter buttons are built from the data-tags below by assets/js/projects.js, once there are 8+ projects. -->
       <div class="filters" role="group" aria-label="Filter projects" hidden></div>
 
       <!--
@@ -146,7 +160,7 @@
           </div>
         </li>
 
-        <li class="project" data-tags="ai fullstack">
+        <li class="project" data-tags="fullstack">
           <div>
             <p class="project-kind">Client work · anonymised</p>
             <h3>AI-assisted estimating platform</h3>
@@ -171,7 +185,7 @@
             <p>Since I can't show client work, I built this one in the open. You can call it or talk to it in your browser. It answers for Northside HVAC &amp; Plumbing, a made-up company, checks a Google Calendar, books a two-hour visit, and adds you to a Google Sheet that stands in for a CRM. On the phone line, urgent calls go through to a person.</p>
             <div class="project-foot">
               <ul class="stack" aria-label="Built with"><li>Retell</li><li>n8n</li><li>Google Calendar</li><li>Google Sheets</li></ul>
-              <span class="project-link">demo.naumanbuilds.com</span>
+              <span class="project-link">Live version coming soon</span>
             </div>
           </div>
         </li>
@@ -186,25 +200,11 @@
             <p>The n8n workflows behind the AI receptionist above, with sample payloads and setup notes. Keys and IDs are stripped out so you can import them into your own n8n.</p>
             <div class="project-foot">
               <ul class="stack" aria-label="Built with"><li>Retell</li><li>n8n</li></ul>
-              <span class="project-link">GitHub</span>
+              <span class="project-link">Repo coming soon</span>
             </div>
           </div>
         </li>
 
-        <li class="project" data-tags="ai automation oss">
-          <div>
-            <p class="project-kind">Open source</p>
-            <h3>WhatsApp handoff handler</h3>
-            <p class="status"><i aria-hidden="true"></i>Planned</p>
-          </div>
-          <div>
-            <p>A WhatsApp Cloud API handler that passes the chat to a person when the bot can't help. Not started yet.</p>
-            <div class="project-foot">
-              <ul class="stack" aria-label="Built with"><li>WhatsApp Cloud API</li></ul>
-              <span class="project-link">GitHub</span>
-            </div>
-          </div>
-        </li>
       </ul>
     </section>
 
@@ -219,6 +219,7 @@
         <h2 id="contact-title">Email me</h2>
         <a class="mail" href="mailto:nauman@naumanbuilds.com">nauman@naumanbuilds.com</a>
         <p>If something's broken, a short description and a call recording or transcript is usually enough for me to start.</p>
+        <p class="contact-links">Also on <a href="https://www.linkedin.com/in/muhammad-nauman-4b3b47280" rel="me">LinkedIn</a> and <a href="https://github.com/AzathothVoid" rel="me">GitHub</a>.</p>
       </div>
     </section>
   </div>
@@ -227,7 +228,7 @@
 <footer class="site-foot">
   <div class="wrap">
     <span>Nauman · naumanbuilds.com</span>
-    <span>Last updated October 2026</span>
+    <span><a href="https://www.linkedin.com/in/muhammad-nauman-4b3b47280">LinkedIn</a> · <a href="https://github.com/AzathothVoid">GitHub</a></span>
   </div>
 </footer>
 

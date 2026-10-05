@@ -1,8 +1,9 @@
-// Project filters. Without JavaScript every project shows and the filter bar stays hidden.
+// Project filters. Shown only once there are MIN_PROJECTS or more; without JavaScript every project shows.
 (function () {
+  var MIN_PROJECTS = 8; // filters only help once the list is long
   var bar = document.querySelector('.filters');
   var items = Array.prototype.slice.call(document.querySelectorAll('.project'));
-  if (!bar || !items.length) return;
+  if (!bar || items.length < MIN_PROJECTS) return;
 
   var labels = { all: 'All', ai: 'AI agents', automation: 'Automation', fullstack: 'Full-stack', oss: 'Open source' };
   var counts = { all: items.length };
@@ -19,6 +20,7 @@
     b.setAttribute('data-filter', key);
     b.setAttribute('aria-pressed', key === 'all' ? 'true' : 'false');
     b.textContent = labels[key];
+    b.setAttribute('aria-label', labels[key] + ', ' + counts[key] + (counts[key] === 1 ? ' project' : ' projects'));
     var n = document.createElement('span');
     n.textContent = counts[key];
     b.appendChild(n);
