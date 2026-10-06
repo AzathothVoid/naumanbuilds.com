@@ -274,3 +274,65 @@ code { font: 13.5px var(--f-mono); background: var(--chip); padding: 1px 5px; bo
   .thumb { width: 84px }
   .pv-flow { grid-template-columns: repeat(2, minmax(0, 1fr)) }
 }
+
+/* ---------- motion ----------
+   All motion is off for people who ask for reduced motion.
+   Scroll reveals only hide content once assets/js/motion.js has started (html.motion), so nothing stays hidden without it. */
+:root { --ease: cubic-bezier(.2, .7, .2, 1) }
+
+/* hover and focus feedback (cheap, works with reduced motion too: colour only) */
+.btn-mail, .service, .viewer-nav button, .thumb, .gal-btn, .nav-mail, .link-quiet, .contact .mail { transition: background-color .2s, border-color .2s, box-shadow .2s, color .2s, opacity .2s, text-underline-offset .2s }
+
+@media (prefers-reduced-motion: no-preference) {
+  .btn-mail, .service, .contact .mail, .gal-btn { transition: background-color .2s, border-color .2s, box-shadow .25s var(--ease), transform .25s var(--ease), opacity .2s }
+  .btn-mail:hover { transform: translateY(-2px); box-shadow: 0 10px 22px -12px rgba(12,26,43,.6) }
+  .service:hover { transform: translateY(-3px); border-color: #B8C4D0; box-shadow: 0 14px 28px -22px rgba(24,38,52,.55) }
+  .link-quiet:hover { text-underline-offset: 6px }
+  .contact .mail:hover { transform: translateX(3px) }
+  .gal-btn:hover { transform: scale(1.06) }
+
+  /* logo and photo: the lime square slides into place */
+  .logo i { animation: mark-in .7s var(--ease) .15s both }
+  .avatar { animation: photo-in .8s var(--ease) .1s both }
+  @keyframes mark-in { from { box-shadow: 0 0 0 var(--lime) } to { box-shadow: 4px 4px 0 var(--lime) } }
+  @keyframes photo-in { from { opacity: 0; transform: scale(.94); box-shadow: 0 0 0 var(--lime) } to { opacity: 1; transform: none; box-shadow: 5px 5px 0 var(--lime) } }
+
+  /* hero load sequence */
+  .hero .id-text, .hero h1, .hero .lede, .hero .lede-2, .hero .cta { animation: rise .7s var(--ease) both }
+  .hero .id-text { animation-delay: .15s }
+  .hero h1 { animation-delay: .22s }
+  .hero .lede { animation-delay: .34s }
+  .hero .lede-2 { animation-delay: .42s }
+  .hero .cta { animation-delay: .5s }
+  .bug-cap { animation: rise .6s var(--ease) .55s both }
+  .bug-card { animation: rise .7s var(--ease) .62s both }
+  @keyframes rise { from { opacity: 0; transform: translateY(16px) } to { opacity: 1; transform: none } }
+
+  /* the bug-log card plays out in order: what happened, cause, first fix, the fix that held */
+  .bug-card > p { animation: fade .5s var(--ease) both }
+  .bug-card > p:nth-of-type(1) { animation-delay: .8s }
+  .bug-card > p:nth-of-type(2) { animation-delay: .95s }
+  .bug-card .bad { animation: flag .9s ease-out 1.5s both }
+  .bug-card dl > * { animation: rise .55s var(--ease) both }
+  .bug-card dl > :nth-child(1), .bug-card dl > :nth-child(2) { animation-delay: 1.5s }
+  .bug-card dl > :nth-child(3), .bug-card dl > :nth-child(4) { animation-delay: 1.9s }
+  .bug-card dl > :nth-child(5), .bug-card dl > :nth-child(6) { animation-delay: 2.4s }
+  .bug-card dd:last-child code { animation: held 1.2s var(--ease) 2.9s both }
+  @keyframes fade { from { opacity: 0 } to { opacity: 1 } }
+  @keyframes flag { 0% { background: transparent } 30% { background: rgba(201,67,58,.16) } 100% { background: transparent } }
+  @keyframes held { 0% { background: var(--chip); box-shadow: none } 35% { background: var(--lime); box-shadow: 0 0 0 4px rgba(200,245,96,.45) } 100% { background: #E6F7B8; box-shadow: none } }
+
+  /* scroll reveals (only after motion.js marks the page) */
+  .motion [data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity .65s var(--ease) var(--d, 0s), transform .65s var(--ease) var(--d, 0s) }
+  .motion [data-reveal].in { opacity: 1; transform: none }
+  .motion .terms li[data-reveal]::before { transform: rotate(-45deg) scale(0); transition: transform .4s var(--ease) calc(var(--d, 0s) + .25s) }
+  .motion .terms li[data-reveal].in::before { transform: rotate(-45deg) scale(1) }
+  .motion .first-job li[data-reveal]::before { transform: scale(.4); transition: transform .45s cubic-bezier(.3, 1.6, .5, 1) calc(var(--d, 0s) + .15s) }
+  .motion .first-job li[data-reveal].in::before { transform: translateY(-1px) scale(1) }
+
+  /* switching projects in the viewer */
+  .project.is-entering { animation: panel-in .38s var(--ease) both }
+  @keyframes panel-in { from { opacity: 0; transform: translateX(10px) } to { opacity: 1; transform: none } }
+  .viewer-nav button[aria-selected="true"]::before { animation: bar-in .3s var(--ease) both }
+  @keyframes bar-in { from { transform: scaleY(0) } to { transform: none } }
+}

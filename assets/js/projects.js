@@ -49,6 +49,9 @@
       tabs[j].tabIndex = on ? 0 : -1;
     });
     if (fromUser) {
+      var shown = projects[i];
+      shown.classList.remove('is-entering'); void shown.offsetWidth; shown.classList.add('is-entering');
+      shown.addEventListener('animationend', function done() { shown.classList.remove('is-entering'); shown.removeEventListener('animationend', done) });
       tabs[i].scrollIntoView({ block: 'nearest', inline: 'nearest' });
       try { history.replaceState(null, '', '#' + projects[i].id) } catch (e) {}
     }
