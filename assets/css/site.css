@@ -211,7 +211,10 @@ code { font: 13.5px var(--f-mono); background: var(--chip); padding: 1px 5px; bo
 }
 
 /* project screenshots */
-.shots { list-style: none; margin: 18px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px }
+.shots { list-style: none; margin: 18px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px }
+.shot-lead { grid-column: 1 / -1 }
+.shot-lead .shot img { aspect-ratio: auto; object-fit: initial }
+.shot-lead .shot { box-shadow: 0 1px 0 rgba(24,38,52,.03), 0 14px 30px -22px rgba(24,38,52,.5) }
 .shot { display: block; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--surface); transition: border-color .15s, transform .15s }
 .shot img { width: 100%; aspect-ratio: 560 / 365; object-fit: cover; object-position: top left }
 .shot:hover { border-color: var(--ink) }
