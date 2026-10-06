@@ -135,89 +135,126 @@
         <p class="sec-intro">Most of my work is for clients, so the code and the products stay private. I've described those projects below without names. The voice agent is one I built myself so you have something you can actually try.</p>
       </div>
 
-      <!-- Filter buttons are built from the data-tags below by assets/js/projects.js, once there are 8+ projects. -->
-      <div class="filters" role="group" aria-label="Filter projects" hidden></div>
-
       <!--
-        To add a project, copy one <li class="project"> block and edit it.
-        data-tags: any of  ai  automation  fullstack  oss   (space-separated)
-        status classes: "status live" (green), "status soon" (amber), "status" (grey)
-        kind: "Client work · anonymised", "Live build · try it", "Open source"
+        One <article class="project"> per project. The list on the left is built from these by assets/js/projects.js.
+        To add a project: copy an <article> block, give it a new id ("project-<name>"), and edit it.
+        Projects with screenshots use the .gallery block; projects without use a .panel-visual block.
       -->
-      <ul class="project-list">
-        <li class="project" data-tags="ai automation fullstack">
-          <div>
+      <div class="viewer">
+        <div class="viewer-nav" role="tablist" aria-label="Projects" hidden></div>
+        <div class="viewer-panels">
+        <article class="project" id="project-sales" data-tags="ai automation fullstack" aria-labelledby="project-sales-title">
+          <header class="project-head">
             <p class="project-kind">Client work · anonymised</p>
-            <h3>Sales-intelligence platform</h3>
+            <h3 id="project-sales-title">Sales-intelligence platform</h3>
             <p class="status live"><i aria-hidden="true"></i>In production</p>
+          </header>
+          <p class="project-body">A sales-intelligence platform for a B2B sales team, running on 26 n8n workflows in production. Leads are enriched through Apollo, and the AI research on each one is cross-checked between models before anything is written. The CRM is custom, built with Next.js and Supabase, and handles Gmail, calendar, calls and SMS.</p>
+          <div class="project-foot">
+            <ul class="stack" aria-label="Built with"><li>n8n</li><li>Apollo</li><li>Next.js</li><li>Supabase</li></ul>
+            <span class="project-link">Private client project, no public link</span>
           </div>
-          <div>
-            <p>A sales-intelligence platform for a B2B sales team, running on 26 n8n workflows in production. Leads are enriched through Apollo, and the AI research on each one is cross-checked between models before anything is written. The CRM is custom, built with Next.js and Supabase, and handles Gmail, calendar, calls and SMS.</p>
-            <div class="project-foot">
-              <ul class="stack" aria-label="Built with"><li>n8n</li><li>Apollo</li><li>Next.js</li><li>Supabase</li></ul>
-              <span class="project-link">Private client project, no public link</span>
-            </div>
-              <ul class="shots" aria-label="Screenshots">
-                <li class="shot-lead"><a class="shot" href="assets/img/projects/sales-2-lead-panel.jpg" data-webp="assets/img/projects/sales-2-lead-panel.webp" data-caption="Lead panel with contacts, email threads, meetings and an activity log"><picture><source type="image/webp" srcset="assets/img/projects/sales-2-lead-panel-thumb.webp 560w, assets/img/projects/sales-2-lead-panel.webp 1600w" sizes="(max-width: 860px) 100vw, 640px"><img src="assets/img/projects/sales-2-lead-panel.jpg" srcset="assets/img/projects/sales-2-lead-panel-thumb.jpg 560w, assets/img/projects/sales-2-lead-panel.jpg 1600w" sizes="(max-width: 860px) 100vw, 640px" width="1600" height="1040" alt="Lead panel with contacts, email threads, meetings and an activity log" loading="lazy"></picture></a></li>
-                <li><a class="shot" href="assets/img/projects/sales-1-pipeline.jpg" data-webp="assets/img/projects/sales-1-pipeline.webp" data-caption="Lead pipeline with stage filters and due-today and overdue flags"><picture><source srcset="assets/img/projects/sales-1-pipeline-thumb.webp" type="image/webp"><img src="assets/img/projects/sales-1-pipeline-thumb.jpg" width="560" height="365" alt="Lead pipeline with stage filters and due-today and overdue flags" loading="lazy"></picture></a></li>
-                <li><a class="shot" href="assets/img/projects/sales-3-approval-queue.jpg" data-webp="assets/img/projects/sales-3-approval-queue.webp" data-caption="Admin queue where new leads are approved before they reach the pipeline"><picture><source srcset="assets/img/projects/sales-3-approval-queue-thumb.webp" type="image/webp"><img src="assets/img/projects/sales-3-approval-queue-thumb.jpg" width="560" height="365" alt="Admin queue where new leads are approved before they reach the pipeline" loading="lazy"></picture></a></li>
+          <div class="gallery">
+            <div class="gallery-stage">
+              <ul class="slides" tabindex="0" aria-label="Screenshots, mock data">
+              <li class="slide"><a class="shot" href="assets/img/projects/sales-2-lead-panel.jpg" data-webp="assets/img/projects/sales-2-lead-panel.webp" data-caption="Lead panel with contacts, email threads, meetings and an activity log"><picture><source type="image/webp" srcset="assets/img/projects/sales-2-lead-panel-thumb.webp 560w, assets/img/projects/sales-2-lead-panel.webp 1600w" sizes="(max-width: 860px) 100vw, 720px"><img src="assets/img/projects/sales-2-lead-panel.jpg" srcset="assets/img/projects/sales-2-lead-panel-thumb.jpg 560w, assets/img/projects/sales-2-lead-panel.jpg 1600w" sizes="(max-width: 860px) 100vw, 720px" width="1600" height="1040" alt="Lead panel with contacts, email threads, meetings and an activity log"></picture></a><p class="slide-cap">Lead panel with contacts, email threads, meetings and an activity log</p></li>
+              <li class="slide"><a class="shot" href="assets/img/projects/sales-1-pipeline.jpg" data-webp="assets/img/projects/sales-1-pipeline.webp" data-caption="Lead pipeline with stage filters and due-today and overdue flags"><picture><source type="image/webp" srcset="assets/img/projects/sales-1-pipeline-thumb.webp 560w, assets/img/projects/sales-1-pipeline.webp 1600w" sizes="(max-width: 860px) 100vw, 720px"><img src="assets/img/projects/sales-1-pipeline.jpg" srcset="assets/img/projects/sales-1-pipeline-thumb.jpg 560w, assets/img/projects/sales-1-pipeline.jpg 1600w" sizes="(max-width: 860px) 100vw, 720px" width="1600" height="1040" alt="Lead pipeline with stage filters and due-today and overdue flags" loading="lazy"></picture></a><p class="slide-cap">Lead pipeline with stage filters and due-today and overdue flags</p></li>
+              <li class="slide"><a class="shot" href="assets/img/projects/sales-3-approval-queue.jpg" data-webp="assets/img/projects/sales-3-approval-queue.webp" data-caption="Admin queue where new leads are approved before they reach the pipeline"><picture><source type="image/webp" srcset="assets/img/projects/sales-3-approval-queue-thumb.webp 560w, assets/img/projects/sales-3-approval-queue.webp 1600w" sizes="(max-width: 860px) 100vw, 720px"><img src="assets/img/projects/sales-3-approval-queue.jpg" srcset="assets/img/projects/sales-3-approval-queue-thumb.jpg 560w, assets/img/projects/sales-3-approval-queue.jpg 1600w" sizes="(max-width: 860px) 100vw, 720px" width="1600" height="1040" alt="Admin queue where new leads are approved before they reach the pipeline" loading="lazy"></picture></a><p class="slide-cap">Admin queue where new leads are approved before they reach the pipeline</p></li>
               </ul>
-              <p class="shots-note">Screenshots with mock data. Select any to enlarge.</p>
+              <button type="button" class="gal-btn gal-prev" aria-label="Previous screenshot">‹</button>
+              <button type="button" class="gal-btn gal-next" aria-label="Next screenshot">›</button>
+              <span class="gal-count" aria-hidden="true">1 / 3</span>
+            </div>
+            <ul class="thumbs">
+              <li><button type="button" class="thumb" data-index="0" aria-label="Show screenshot 1: Lead panel with contacts, email threads, meetings and an activity log"><picture><source srcset="assets/img/projects/sales-2-lead-panel-thumb.webp" type="image/webp"><img src="assets/img/projects/sales-2-lead-panel-thumb.jpg" width="560" height="365" alt="" loading="lazy"></picture></button></li>
+              <li><button type="button" class="thumb" data-index="1" aria-label="Show screenshot 2: Lead pipeline with stage filters and due-today and overdue flags"><picture><source srcset="assets/img/projects/sales-1-pipeline-thumb.webp" type="image/webp"><img src="assets/img/projects/sales-1-pipeline-thumb.jpg" width="560" height="365" alt="" loading="lazy"></picture></button></li>
+              <li><button type="button" class="thumb" data-index="2" aria-label="Show screenshot 3: Admin queue where new leads are approved before they reach the pipeline"><picture><source srcset="assets/img/projects/sales-3-approval-queue-thumb.webp" type="image/webp"><img src="assets/img/projects/sales-3-approval-queue-thumb.jpg" width="560" height="365" alt="" loading="lazy"></picture></button></li>
+            </ul>
+            <p class="gal-note">Screenshots with mock data. Select the large image to open it full size.</p>
           </div>
-        </li>
+        </article>
 
-        <li class="project" data-tags="fullstack">
-          <div>
+        <article class="project" id="project-estimating" data-tags="fullstack" aria-labelledby="project-estimating-title">
+          <header class="project-head">
             <p class="project-kind">Client work · anonymised</p>
-            <h3>AI-assisted estimating platform</h3>
+            <h3 id="project-estimating-title">AI-assisted estimating platform</h3>
             <p class="status live"><i aria-hidden="true"></i>Internal tool, one client</p>
+          </header>
+          <p class="project-body">An AI-assisted estimating platform for electrical contractors. It's a multi-tenant SaaS built with FastAPI, React and PostgreSQL. One client uses it as an internal tool, and it has over 1,400 automated tests.</p>
+          <div class="project-foot">
+            <ul class="stack" aria-label="Built with"><li>FastAPI</li><li>React</li><li>PostgreSQL</li></ul>
+            <span class="project-link">Private client project, no public link</span>
           </div>
-          <div>
-            <p>An AI-assisted estimating platform for electrical contractors. It's a multi-tenant SaaS built with FastAPI, React and PostgreSQL. One client uses it as an internal tool, and it has over 1,400 automated tests.</p>
-            <div class="project-foot">
-              <ul class="stack" aria-label="Built with"><li>FastAPI</li><li>React</li><li>PostgreSQL</li></ul>
-              <span class="project-link">Private client project, no public link</span>
-            </div>
-              <ul class="shots" aria-label="Screenshots">
-                <li class="shot-lead"><a class="shot" href="assets/img/projects/estimating-2-line-items.jpg" data-webp="assets/img/projects/estimating-2-line-items.webp" data-caption="Priced line items with material, labour, tax and the source of each price"><picture><source type="image/webp" srcset="assets/img/projects/estimating-2-line-items-thumb.webp 560w, assets/img/projects/estimating-2-line-items.webp 1600w" sizes="(max-width: 860px) 100vw, 640px"><img src="assets/img/projects/estimating-2-line-items.jpg" srcset="assets/img/projects/estimating-2-line-items-thumb.jpg 560w, assets/img/projects/estimating-2-line-items.jpg 1600w" sizes="(max-width: 860px) 100vw, 640px" width="1600" height="1040" alt="Priced line items with material, labour, tax and the source of each price" loading="lazy"></picture></a></li>
-                <li><a class="shot" href="assets/img/projects/estimating-1-classification.jpg" data-webp="assets/img/projects/estimating-1-classification.webp" data-caption="Takeoff rows sorted into conduit and conductor, checked against the source totals"><picture><source srcset="assets/img/projects/estimating-1-classification-thumb.webp" type="image/webp"><img src="assets/img/projects/estimating-1-classification-thumb.jpg" width="560" height="365" alt="Takeoff rows sorted into conduit and conductor, checked against the source totals" loading="lazy"></picture></a></li>
-                <li><a class="shot" href="assets/img/projects/estimating-3-workbook.jpg" data-webp="assets/img/projects/estimating-3-workbook.webp" data-caption="Bid workbook in the browser with live formulas and Excel export"><picture><source srcset="assets/img/projects/estimating-3-workbook-thumb.webp" type="image/webp"><img src="assets/img/projects/estimating-3-workbook-thumb.jpg" width="560" height="365" alt="Bid workbook in the browser with live formulas and Excel export" loading="lazy"></picture></a></li>
+          <div class="gallery">
+            <div class="gallery-stage">
+              <ul class="slides" tabindex="0" aria-label="Screenshots, mock data">
+              <li class="slide"><a class="shot" href="assets/img/projects/estimating-2-line-items.jpg" data-webp="assets/img/projects/estimating-2-line-items.webp" data-caption="Priced line items with material, labour, tax and the source of each price"><picture><source type="image/webp" srcset="assets/img/projects/estimating-2-line-items-thumb.webp 560w, assets/img/projects/estimating-2-line-items.webp 1600w" sizes="(max-width: 860px) 100vw, 720px"><img src="assets/img/projects/estimating-2-line-items.jpg" srcset="assets/img/projects/estimating-2-line-items-thumb.jpg 560w, assets/img/projects/estimating-2-line-items.jpg 1600w" sizes="(max-width: 860px) 100vw, 720px" width="1600" height="1040" alt="Priced line items with material, labour, tax and the source of each price"></picture></a><p class="slide-cap">Priced line items with material, labour, tax and the source of each price</p></li>
+              <li class="slide"><a class="shot" href="assets/img/projects/estimating-1-classification.jpg" data-webp="assets/img/projects/estimating-1-classification.webp" data-caption="Takeoff rows sorted into conduit and conductor, checked against the source totals"><picture><source type="image/webp" srcset="assets/img/projects/estimating-1-classification-thumb.webp 560w, assets/img/projects/estimating-1-classification.webp 1600w" sizes="(max-width: 860px) 100vw, 720px"><img src="assets/img/projects/estimating-1-classification.jpg" srcset="assets/img/projects/estimating-1-classification-thumb.jpg 560w, assets/img/projects/estimating-1-classification.jpg 1600w" sizes="(max-width: 860px) 100vw, 720px" width="1600" height="1040" alt="Takeoff rows sorted into conduit and conductor, checked against the source totals" loading="lazy"></picture></a><p class="slide-cap">Takeoff rows sorted into conduit and conductor, checked against the source totals</p></li>
+              <li class="slide"><a class="shot" href="assets/img/projects/estimating-3-workbook.jpg" data-webp="assets/img/projects/estimating-3-workbook.webp" data-caption="Bid workbook in the browser with live formulas and Excel export"><picture><source type="image/webp" srcset="assets/img/projects/estimating-3-workbook-thumb.webp 560w, assets/img/projects/estimating-3-workbook.webp 1600w" sizes="(max-width: 860px) 100vw, 720px"><img src="assets/img/projects/estimating-3-workbook.jpg" srcset="assets/img/projects/estimating-3-workbook-thumb.jpg 560w, assets/img/projects/estimating-3-workbook.jpg 1600w" sizes="(max-width: 860px) 100vw, 720px" width="1600" height="1040" alt="Bid workbook in the browser with live formulas and Excel export" loading="lazy"></picture></a><p class="slide-cap">Bid workbook in the browser with live formulas and Excel export</p></li>
               </ul>
-              <p class="shots-note">Screenshots with mock data. Select any to enlarge.</p>
+              <button type="button" class="gal-btn gal-prev" aria-label="Previous screenshot">‹</button>
+              <button type="button" class="gal-btn gal-next" aria-label="Next screenshot">›</button>
+              <span class="gal-count" aria-hidden="true">1 / 3</span>
+            </div>
+            <ul class="thumbs">
+              <li><button type="button" class="thumb" data-index="0" aria-label="Show screenshot 1: Priced line items with material, labour, tax and the source of each price"><picture><source srcset="assets/img/projects/estimating-2-line-items-thumb.webp" type="image/webp"><img src="assets/img/projects/estimating-2-line-items-thumb.jpg" width="560" height="365" alt="" loading="lazy"></picture></button></li>
+              <li><button type="button" class="thumb" data-index="1" aria-label="Show screenshot 2: Takeoff rows sorted into conduit and conductor, checked against the source totals"><picture><source srcset="assets/img/projects/estimating-1-classification-thumb.webp" type="image/webp"><img src="assets/img/projects/estimating-1-classification-thumb.jpg" width="560" height="365" alt="" loading="lazy"></picture></button></li>
+              <li><button type="button" class="thumb" data-index="2" aria-label="Show screenshot 3: Bid workbook in the browser with live formulas and Excel export"><picture><source srcset="assets/img/projects/estimating-3-workbook-thumb.webp" type="image/webp"><img src="assets/img/projects/estimating-3-workbook-thumb.jpg" width="560" height="365" alt="" loading="lazy"></picture></button></li>
+            </ul>
+            <p class="gal-note">Screenshots with mock data. Select the large image to open it full size.</p>
           </div>
-        </li>
+        </article>
 
-        <li class="project" data-tags="ai automation">
-          <div>
+        <article class="project" id="project-receptionist" data-tags="ai automation" aria-labelledby="project-receptionist-title">
+          <header class="project-head">
             <p class="project-kind">Live build · try it</p>
-            <h3>AI receptionist for a plumbing company</h3>
+            <h3 id="project-receptionist-title">AI receptionist for a plumbing company</h3>
             <p class="status soon"><i aria-hidden="true"></i>Coming soon</p>
+          </header>
+          <p class="project-body">Since I can't show client work, I built this one in the open. You can call it or talk to it in your browser. It answers for Northside HVAC &amp; Plumbing, a made-up company, checks a Google Calendar, books a two-hour visit, and adds you to a Google Sheet that stands in for a CRM. On the phone line, urgent calls go through to a person.</p>
+          <div class="project-foot">
+            <ul class="stack" aria-label="Built with"><li>Retell</li><li>n8n</li><li>Google Calendar</li><li>Google Sheets</li></ul>
+            <span class="project-link">Live version coming soon</span>
           </div>
-          <div>
-            <p>Since I can't show client work, I built this one in the open. You can call it or talk to it in your browser. It answers for Northside HVAC &amp; Plumbing, a made-up company, checks a Google Calendar, books a two-hour visit, and adds you to a Google Sheet that stands in for a CRM. On the phone line, urgent calls go through to a person.</p>
-            <div class="project-foot">
-              <ul class="stack" aria-label="Built with"><li>Retell</li><li>n8n</li><li>Google Calendar</li><li>Google Sheets</li></ul>
-              <span class="project-link">Live version coming soon</span>
-            </div>
+          <div class="panel-visual panel-dark">
+            <p class="pv-label">How a call moves through it</p>
+            <ol class="pv-flow">
+              <li><b>Caller</b><span>phone or browser</span></li>
+              <li><b>Voice agent</b><span>Retell</span></li>
+              <li><b>Tools</b><span>n8n webhooks</span></li>
+              <li><b>Calendar + CRM</b><span>Google Calendar + Sheet</span></li>
+            </ol>
+            <p class="pv-text">Urgent calls (gas smell, flooding, CO alarm) get a safety line first, then go to a person on the phone line. If a tool fails, it takes a callback instead of making up a time.</p>
+            <a class="pv-link" href="https://demo.naumanbuilds.com">Read how the demo works</a>
           </div>
-        </li>
+        </article>
 
-        <li class="project" data-tags="ai automation oss">
-          <div>
+        <article class="project" id="project-repo" data-tags="ai automation oss" aria-labelledby="project-repo-title">
+          <header class="project-head">
             <p class="project-kind">Open source</p>
-            <h3>retell-n8n-booking-agent</h3>
+            <h3 id="project-repo-title">retell-n8n-booking-agent</h3>
             <p class="status soon"><i aria-hidden="true"></i>Coming soon</p>
+          </header>
+          <p class="project-body">The n8n workflows behind the AI receptionist, with sample payloads and setup notes. Keys and IDs are stripped out so you can import them into your own n8n.</p>
+          <div class="project-foot">
+            <ul class="stack" aria-label="Built with"><li>Retell</li><li>n8n</li></ul>
+            <span class="project-link">Repo coming soon</span>
           </div>
-          <div>
-            <p>The n8n workflows behind the AI receptionist above, with sample payloads and setup notes. Keys and IDs are stripped out so you can import them into your own n8n.</p>
-            <div class="project-foot">
-              <ul class="stack" aria-label="Built with"><li>Retell</li><li>n8n</li></ul>
-              <span class="project-link">Repo coming soon</span>
-            </div>
+          <div class="panel-visual">
+            <p class="pv-label">Planned contents</p>
+            <pre class="pv-tree" aria-label="Planned repository contents">retell-n8n-booking-agent/
+├── README.md
+├── workflows/
+│   ├── nsd_check_availability.json
+│   ├── nsd_book_appointment.json
+│   ├── nsd_log_callback_request.json
+│   └── nsd_error_handler.json
+├── samples/        <span>request and response payloads</span>
+└── docs/setup.md   <span>Retell + n8n setup</span></pre>
           </div>
-        </li>
-
-      </ul>
+        </article>
+        </div>
+      </div>
     </section>
 
     <section class="contact" id="contact" aria-labelledby="contact-title">
