@@ -336,3 +336,11 @@ code { font: 13.5px var(--f-mono); background: var(--chip); padding: 1px 5px; bo
   .viewer-nav button[aria-selected="true"]::before { animation: bar-in .3s var(--ease) both }
   @keyframes bar-in { from { transform: scaleY(0) } to { transform: none } }
 }
+
+/* ---------- text pages (privacy) ---------- */
+.doc { padding-block: 48px 72px; max-width: calc(68ch + 2 * var(--gutter)) }
+.doc h1 { font-size: clamp(34px, 5vw, 48px); letter-spacing: -.03em; margin-top: 10px }
+.doc .lede { max-width: none }
+.doc h2 { font-size: 22px; letter-spacing: -.01em; margin-top: 40px }
+.doc p { margin: 12px 0 0 }
+.doc a { color: var(--ink); text-underline-offset: 3px }

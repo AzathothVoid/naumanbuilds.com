@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy · naumanbuilds</title>
+<meta name="description" content="What the naumanbuilds sites and the voice and WhatsApp demos store, and how to get it deleted.">
+<link rel="canonical" href="https://naumanbuilds.com/privacy.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/schibsted-grotesk-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/public-sans-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css">
+<meta name="theme-color" content="#F5F7F9">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="logo" href="/"><i aria-hidden="true"></i>naumanbuilds</a>
+    <nav class="site-nav" aria-label="Main">
+      <a class="nav-mail" href="mailto:nauman@naumanbuilds.com">Email</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap doc">
+  <p class="mono-label">Last updated 8 October 2026</p>
+  <h1>Privacy</h1>
+  <p class="lede">This page covers naumanbuilds.com, demo.naumanbuilds.com and the two demos you can try there, a voice agent and a WhatsApp bot for Northside HVAC &amp; Plumbing. Northside is a made-up company. I run both demos myself, so please use made-up details when you try them.</p>
+
+  <h2>The websites</h2>
+  <p>Neither site uses cookies, analytics or any tracking. The pages are hosted on GitHub Pages, and GitHub may keep its own server logs.</p>
+  <p>The demo page saves one random ID in your browser's local storage. The call limits use it to tell repeat visits apart. It isn't linked to anything else about you.</p>
+
+  <h2>The voice demo</h2>
+  <p>Calls go through Retell, which runs the voice agent and records each call. The agent says so at the start of the call.</p>
+  <p>What you say on a call can end up in a few places: the recording and transcript at Retell, a booking or callback request in a Google Calendar and a Google Sheet, and an alert email to my inbox when something needs a person. For the browser call limits I keep a short hash of your IP address with the call record, not the address itself.</p>
+  <p>I delete rows in the Sheet by hand. Recordings and transcripts are deleted when you ask (see below).</p>
+
+  <h2>The WhatsApp demo</h2>
+  <p>Messages you send to the demo's WhatsApp number come to my automation server (n8n) through Meta's WhatsApp Cloud API. Meta handles them under its own terms.</p>
+  <p>I keep your WhatsApp number and the conversation for 7 days, so a person can read it if the bot hands the chat over. Then it's deleted automatically. The raw message data, which includes your WhatsApp name, also sits in n8n's run logs, and those are deleted after 7 days too.</p>
+  <p>If you ask for a callback, the name, number and problem you type go into the same Google Sheet as the voice demo. Alert emails to my inbox can include the recent messages, but only the last two digits of your WhatsApp number.</p>
+
+  <h2>Who else handles the data</h2>
+  <p>Retell (voice calls), Meta (WhatsApp), Google (Calendar and Sheets), Cloudflare (connects the demos to my server), Zoho (my email) and GitHub (hosts the pages). I don't sell or share the data with anyone else, and I don't use it for marketing.</p>
+
+  <h2 id="delete">Getting your data deleted</h2>
+  <p>Email <a href="mailto:nauman@naumanbuilds.com">nauman@naumanbuilds.com</a> with the rough time of your call, or the WhatsApp number you messaged from. I'll delete the recording, transcript, Sheet rows, messages and alert emails that belong to you, and reply when it's done.</p>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span>Nauman · naumanbuilds.com</span>
+    <span><a href="/">Home</a> · <a href="https://www.linkedin.com/in/muhammad-nauman-4b3b47280">LinkedIn</a> · <a href="https://github.com/AzathothVoid">GitHub</a></span>
+  </div>
+</footer>
+</body>
+</html>
